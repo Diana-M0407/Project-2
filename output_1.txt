@@ -1,3 +1,5 @@
+Results from Algorithm 1: "Target Terms or Substrings"
+
 Array 1a and 1b:
 Output_order = [34, 38, 44, 51]
 Output_array = ['brea', 'corona', 'modesto', 'clovis']
