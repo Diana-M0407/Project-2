@@ -11,21 +11,21 @@ Algorithm 3: Merging Techniques
 * Name: James Truong      Email: <jtrung93@csu.fullerton.edu>
 * Name: Robert Sanchez    Email: <>
 
-# Instructions
+# Instructions:
 
 Hello professor Chavan, this program was created in Python language. Please execute program in python.
 
 
-# Instruction for venv (STUDENT)
+# Instruction for venv (STUDENT):
 
-# Step 1: access through WSL: cd ~/Projects/Project2
+  Step 1: access through WSL: cd ~/Projects/Project2
 
-# step 2: source venv/bin/activate
+  step 2: source venv/bin/activate
 
-# step 3: python3 main.py
+  step 3: python3 main.py
 
-# step 4: code
+  step 4: code
 
-# OPTIONAL step: Access vias Windows File Explorer
+  OPTIONAL step: Access vias Windows File Explorer
 
 enter in address bar: \\wsl$\Ubuntu\home\consigirl\Projects\Project2
