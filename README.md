@@ -16,7 +16,7 @@ Algorithm 3: Merging Techniques
 Hello professor Chavan, this program was created in Python language. Please execute program in python.
 
 
-# STUDENT: Instruction for virtueal environment (venv)
+# Student instruction for virtual environment (venv)
 
   Step 1: access through WSL: cd ~/Projects/Project2
 
