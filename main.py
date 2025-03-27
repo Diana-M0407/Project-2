@@ -2,11 +2,10 @@
 
 from docx import Document
 
-doc = Document("your_file.docx")
+doc = Document("in2a.docx")
 
-for paragraph in doc.paragraphs:
-    print(paragraph.text)
-
+doc = Document("in2a.docx")
+doc_string = " ".join([para.text for para in doc.paragraphs])
 
 #Input:
 A = [ "thismetoaklandrialtofullertonmarcolongchinofresnovallejoclovissimithound"]
@@ -56,3 +55,5 @@ def find_cities_by_index(array_A, array_B):
 
 
 find_cities_by_index(A, B)
+print(doc_string)
+
