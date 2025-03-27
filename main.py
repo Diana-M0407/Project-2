@@ -1,6 +1,7 @@
 # Algorithm 1: Target Terms or Substrings
 
-import re
+import re     # for regex
+import ast    # for safer evaluataion of string literals
 from docx import Document # import document
 
 def find_cities_by_index(array_A, array_B):
@@ -36,14 +37,21 @@ with open("output_1.txt", "w") as file:
   file.write(f"Results from Algorithm 1: \"Target Terms or Substrings\"\n\n")
 
   for i, (raw_A, raw_B) in enumerate(array_pairs, start=1):
-      A = eval(raw_A)  # array_A: one string inside a list
-      B = eval(raw_B)  # array_B: list of city names
-      output_order, output_array = find_cities_by_index(A, B)
+      #A = eval(raw_A)  # array_A: one string inside a list
+      #B = eval(raw_B)  # array_B: list of city names
 
+    try:
+      A = ast.literal_eval(raw_A)
+      B = ast.literal_eval(raw_B)
+    except(ValueError,SyntaxError) as e:
+       file.write(f"Error parsing inputs on line {i}: {e}\n")
+       continue
 
-      file.write(f"Array {i}a and {i}b:\n")
-      file.write(f"Output_order = {output_order}\n")
-      file.write(f"Output_array = {output_array}\n\n")
+    output_order, output_array = find_cities_by_index(A, B)
+
+    file.write(f"Array {i}a and {i}b:\n")
+    file.write(f"Output_order = {output_order}\n")
+    file.write(f"Output_array = {output_array}\n\n")
 
 print("\nResults from Algorithm 1 written to output_1.txt\n")
 
