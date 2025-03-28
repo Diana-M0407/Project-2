@@ -1,9 +1,9 @@
-# Algorithm 1: Target Terms or Substrings
-
 import re     # for regex
-import ast    # for safer evaluataion of string literals
+import ast    # for safer evaluation of string literals
 from docx import Document # import document
 
+
+# Algorithm 1: Target Terms or Substrings
 def find_cities_by_index(array_A, array_B):
   cities = {}
 
@@ -21,47 +21,11 @@ def find_cities_by_index(array_A, array_B):
   return output_order, output_array
 
 
-# Prepare the .docx file before calling functions
-
-doc = Document("in2a.docx")
-full_text = " ".join([para.text for para in doc.paragraphs])
-
-# Replace fancy quotes with regular quotes
-normalized_text = full_text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'")
-
-# Extract the pairs of arrays using regex
-array_pairs = re.findall(r'array \d+a\s*=\s*(\[".*?"\])\s*array \d+b\s*=\s*(\[.*?\])', normalized_text)
-
-# Process each pair
-with open("output_1.txt", "w") as file:
-  file.write(f"Results from Algorithm 1: \"Target Terms or Substrings\"\n\n")
-
-  for i, (raw_A, raw_B) in enumerate(array_pairs, start=1):
-      #A = eval(raw_A)  # array_A: one string inside a list
-      #B = eval(raw_B)  # array_B: list of city names
-
-    try:
-      A = ast.literal_eval(raw_A)
-      B = ast.literal_eval(raw_B)
-    except(ValueError,SyntaxError) as e:
-       file.write(f"Error parsing inputs on line {i}: {e}\n")
-       continue
-
-    output_order, output_array = find_cities_by_index(A, B)
-
-    file.write(f"Array {i}a and {i}b:\n")
-    file.write(f"Output_order = {output_order}\n")
-    file.write(f"Output_array = {output_array}\n\n")
-
-print("\nResults from Algorithm 1 written to output_1.txt\n")
-
-
-
 
 # Algorithm 2: Run Encoding Problem
-
+# This run-length encoding compresses any character repeated 2 or more times.
 def run_length_encoding(input_string):
-    #Initialize an empty list to return and char_position of input_string
+    #Initialize an empty list to store encoded strings and char_position of input_string
     encoded_list = []
     char_position = 0
 
@@ -86,6 +50,91 @@ def run_length_encoding(input_string):
     return "".join(encoded_list)
 
 
+
+#Extract text from docx file
+def extract_text(docx_file):
+  doc = Document(docx_file)
+  full_text = " ".join([para.text for para in doc.paragraphs])
+
+  # Replace fancy quotes with regular quotes
+  normalized_text = full_text.replace("“", '"').replace("”", '"').replace("‘", "'").replace("’", "'")
+
+  return normalized_text
+
+
+
+#Extract arrays from text
+def create_array_pairs(norm_text):
+  # extract array pairs from .docx file
+  array_pairs = re.findall(r'array \d+a\s*=\s*(\[".*?"\])\s*array \d+b\s*=\s*(\[.*?\])', norm_text)
+  return array_pairs
+
+
+normalized_text = extract_text("in2a.docx")
+array_tuples = create_array_pairs(normalized_text)
+
+# Process each pair of arrays
+with open("output.txt", "w") as file:
+  file.write(f"{'='*10} Results from Algorithm 1: \"Target Terms or Substrings\" {'='*10}\n\n")
+
+  for i, (raw_A, raw_B) in enumerate(array_tuples, start=1):
+    try:
+      A = ast.literal_eval(raw_A)
+      B = ast.literal_eval(raw_B)
+    except(ValueError,SyntaxError) as e:
+       file.write(f"Error parsing inputs on line {i}: {e}\n")
+       continue
+
+    output_order, output_array = find_cities_by_index(A, B)
+
+
+    file.write(f"Array {i}a and {i}b:\n")
+    file.write(f"Input: {i}a = {raw_A}\n")
+    file.write(f"       {i}b = {raw_B}\n\n")
+    file.write(f"Output: Output_order = {output_order}\n")
+    file.write(f"        Output_array = {output_array}\n\n")
+
+
+  file.write(f"{'='*10} Results from Algorithm 2: \"Run Encoding Problem\" {'='*10}\n\n")
+  for i, (raw_A, raw_B) in enumerate(array_tuples, start=1):
+    '''
+    try:
+      A = ast.literal_eval(raw_A)
+      B = ast.literal_eval(raw_B)
+    except(ValueError,SyntaxError) as e:
+       file.write(f"Error parsing inputs on line {i}: {e}\n")
+       continue
+    '''
+
+    long_string = run_length_encoding(raw_A)
+    short_string = run_length_encoding(raw_B)
+
+    #file.write(f"Array {i}a and {i}b:\n")
+    file.write(f"{raw_A} becomes {long_string}\n")
+    file.write(f"{raw_B} becomes {short_string}\n\n")
+
+print(raw_A)
+print(raw_B)
+print(run_length_encoding(raw_A))
+print(run_length_encoding(raw_B))
+print(A)
+print(B)
+
+
+print("\nResults from Algorithm 1 written to output_1.txt\n")
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Sample Test Cases
 print("Input: ddd")
 print("Output: " + run_length_encoding("ddd"))  #"3d"
@@ -93,3 +142,7 @@ print("Input: heloooooooo there")
 print("Output: " + run_length_encoding("heloooooooo there"))  #"hel8o there"
 print("Input: choosemeeky and tuition-free")
 print("Output: " + run_length_encoding("choosemeeky and tuition-free"))  #"ch2osem2eky and tuition-fr2e"
+
+#print(f"Printing nomalized_text: {normalized_text}\n")
+#print(f"printing array_tuples:  {array_tuples}\n")
+#print(run_length_encoding(normalized_text))
