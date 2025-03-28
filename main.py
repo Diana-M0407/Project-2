@@ -28,7 +28,7 @@ def find_cities_by_index(array_A, array_B):
 # Single characters are left unchanged.
 def run_length_encoding(input_string):
     #Initialize an empty list to store encoded strings and char_position of input_string
-    encoded_list = []
+    encoded_list = []     
     char_position = 0
 
     while char_position < len(input_string):
