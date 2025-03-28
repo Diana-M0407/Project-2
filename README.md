@@ -16,7 +16,7 @@ Algorithm 3: Merging Techniques
 Hello professor Chavan, this program was created in Python language. Please execute program in python.
 
 
-# Student instruction for virtual environment (venv)
+# Student instructions for virtual environment (venv)
 
   Step 1: access through WSL: cd ~/Projects/Project2
 
@@ -24,8 +24,6 @@ Hello professor Chavan, this program was created in Python language. Please exec
 
   step 3: python3 main.py
 
-  step 4: code
+  step 4: code .
 
-  OPTIONAL step: Access vias Windows File Explorer
-
-enter in address bar: \\wsl$\Ubuntu\home\consigirl\Projects\Project2
+  (Optional step) Access vias Windows File Explorer: enter in address bar "\\wsl$\Ubuntu\home\consigirl\Projects\Project2"
