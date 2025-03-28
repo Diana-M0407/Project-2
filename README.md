@@ -7,6 +7,8 @@ Algorithm 3: Merging Techniques
 
 # Group Information
 
+Team 7:
+
 * Name: Diana Maldonado,  Email: <di.maldonado5504@csu.fullerton.edu>
 * Name: James Truong      Email: <jtrung93@csu.fullerton.edu>
 * Name: Robert Sanchez    Email: <rsanchez51@csu.fullerton.edu>
