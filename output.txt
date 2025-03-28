@@ -1,34 +1,34 @@
-===== Results from Algorithm 1: "Target Terms or Substrings" =====
+=============== Results from Algorithm 1: "Target Terms or Substrings" ===============
 
-** Array 1a and 1b: **
 Input: 1a = ["sanoaklandrialtofullertonmarcolongbreacoronamodestoclovissimithousand"]
        1b = ['brea', 'modesto', 'clovis', 'corona']
 
 Output: Output_order = [34, 38, 44, 51]
         Output_array = ['brea', 'corona', 'modesto', 'clovis']
 
-** Array 2a and 2b: **
+
 Input: 2a = ["marcopolmonafremontrialtofullertonmarcolongfresnochinoclovissimisalinas"]
        2b = ['fullerton', 'chino', 'fremont', 'fresno']
 
 Output: Output_order = [12, 25, 43, 49]
         Output_array = ['fremont', 'fullerton', 'fresno', 'chino']
 
-** Array 3a and 3b: **
+
 Input: 3a = ["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"]
        3b = ['oxnard', 'irvine', 'orange', 'marco']
 
 Output: Output_order = [21, 26, 43, 59]
         Output_array = ['marco', 'oxnard', 'irvine', 'orange']
 
-===== Results from Algorithm 2: "Run Encoding Problem" =====
 
-["sanoaklandrialtofullertonmarcolongbreacoronamodestoclovissimithousand"] becomes ["sanoaklandrialtofu2lertonmarcolongbreacoronamodestoclovi2simithousand"]
-['brea', 'modesto', 'clovis', 'corona'] becomes ['brea', 'modesto', 'clovis', 'corona']
+=============== Results from Algorithm 2: "Run Encoding Problem" ===============
 
-["marcopolmonafremontrialtofullertonmarcolongfresnochinoclovissimisalinas"] becomes ["marcopolmonafremontrialtofu2lertonmarcolongfresnochinoclovi2simisalinas"]
-['fullerton', 'chino', 'fremont', 'fresno'] becomes ['fu2lerton', 'chino', 'fremont', 'fresno']
+Array 1a: ["sanoaklandrialtofullertonmarcolongbreacoronamodestoclovissimithousand"] becomes ["sanoaklandrialtofu2lertonmarcolongbreacoronamodestoclovi2simithousand"]
+Array 1b: ['brea', 'modesto', 'clovis', 'corona'] becomes ['brea', 'modesto', 'clovis', 'corona']
 
-["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"] becomes ["to2ranceoaklandrialtomarc2oxnardchinofresnoirvineclovi2simiorange"]
-['oxnard', 'irvine', 'orange', 'marco'] becomes ['oxnard', 'irvine', 'orange', 'marco']
+Array 2a: ["marcopolmonafremontrialtofullertonmarcolongfresnochinoclovissimisalinas"] becomes ["marcopolmonafremontrialtofu2lertonmarcolongfresnochinoclovi2simisalinas"]
+Array 2b: ['fullerton', 'chino', 'fremont', 'fresno'] becomes ['fu2lerton', 'chino', 'fremont', 'fresno']
+
+Array 3a: ["torranceoaklandrialtomarcooxnardchinofresnoirvineclovissimiorange"] becomes ["to2ranceoaklandrialtomarc2oxnardchinofresnoirvineclovi2simiorange"]
+Array 3b: ['oxnard', 'irvine', 'orange', 'marco'] becomes ['oxnard', 'irvine', 'orange', 'marco']
 
